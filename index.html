@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALoft Like You</title>
+
+  <style>
+    :root {
+      --cream: #f7f4ef;
+      --bone: #e8e1d8;
+      --stone: #b8afa4;
+      --charcoal: #252525;
+      --olive: #5e6554;
+      --bronze: #6e5544;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(247, 244, 239, 0.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 160px 48px 80px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(56px, 8vw, 120px);
+      line-height: 0.95;
+      font-weight: normal;
+      margin: 0;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      max-width: 480px;
+      font-size: 20px;
+      line-height: 1.55;
+      color: #4a4742;
+      margin-top: 32px;
+    }
+
+    .hero-image {
+      height: 620px;
+      background:
+        linear-gradient(rgba(37,37,37,0.05), rgba(37,37,37,0.05)),
+        url("hero.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 28px;
+      border: 1px solid var(--charcoal);
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .button:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    section {
+      padding: 120px 48px;
+    }
+
+    .intro {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: normal;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 32px auto 0;
+      color: #55514a;
+    }
+
+    .categories {
+      background: var(--bone);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .category {
+      min-height: 420px;
+      padding: 32px;
+      display: flex;
+      align-items: flex-end;
+      background: var(--cream);
+    }
+
+    .category h3 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .journal {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .journal h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 5vw, 78px);
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .journal p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #55514a;
+    }
+
+    .email {
+      background: var(--charcoal);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .email h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5vw, 72px);
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .email p {
+      color: #d8d0c5;
+      font-size: 17px;
+      margin-top: 24px;
+    }
+
+    .email-form {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .email-form input {
+      width: 320px;
+      padding: 15px;
+      border: 1px solid #777;
+      background: transparent;
+      color: var(--cream);
+      font-size: 15px;
+    }
+
+    .email-form button {
+      padding: 15px 28px;
+      background: var(--cream);
+      color: var(--charcoal);
+      border: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+      color: #6a645d;
+    }
+
+    footer a {
+      color: #6a645d;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        padding: 22px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 130px 24px 64px;
+        gap: 44px;
+      }
+
+      .hero-image {
+        height: 420px;
+      }
+
+      section {
+        padding: 80px 24px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .journal {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      footer {
+        padding: 32px 24px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">ALoft Like You</div>
+
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <h1>A loft,<br>like you.</h1>
+        <p>
+          Curated home and lifestyle goods from independent designers,
+          thoughtful collaborations, and objects made for spaces that feel personal.
+        </p>
+        <a class="button" href="#contact">Coming Soon</a>
+      </div>
+
+      <div class="hero-image" aria-label="Curated home and lifestyle goods"></div>
+    </section>
+
+    <section class="intro" id="about">
+      <h2>Beautiful objects worth living with.</h2>
+      <p>
+        ALoft Like You is a curated shop for home, lifestyle, and design pieces.
+        We collect objects with character — things that make a room feel lived in,
+        intentional, and quietly yours.
+      </p>
+    </section>
+
+    <section class="categories" id="shop">
+      <div class="category">
+        <h3>Home Objects</h3>
+      </div>
+
+      <div class="category">
+        <h3>Lifestyle Goods</h3>
+      </div>
+
+      <div class="category">
+        <h3>Designer Collabs</h3>
+      </div>
+    </section>
+
+    <section class="journal" id="journal">
+      <div>
+        <h2>Chosen, not crowded.</h2>
+      </div>
+
+      <div>
+        <p>
+          We believe a home should not be filled all at once. It should be built slowly,
+          through objects that stay with you — a lamp, a chair, a vessel, a book,
+          a piece made by someone worth knowing.
+        </p>
+        <p>
+          Our collection will include independent designers, limited collaborations,
+          and our own small-batch pieces under the ALoft Like You brand.
+        </p>
+      </div>
+    </section>
+
+    <section class="email" id="contact">
+      <h2>Launching soon.</h2>
+      <p>Follow along for first drops, collaborations, and quiet beautiful things.</p>
+
+      <form class="email-form">
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Notify Me</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© ALoft Like You</div>
+    <div>
+      <a href="https://instagram.com/aloftlikeyou">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>
